@@ -3,11 +3,11 @@ import './Home.css';
 import { Link } from 'react-router-dom';
 
 // Import images from public folder
-const profileImage = process.env.PUBLIC_URL + "/My profile.jpg";
-const h1Image = process.env.PUBLIC_URL + "/h1.jpg";
-const h2Image = process.env.PUBLIC_URL + "/h2.png";
-const portImage = process.env.PUBLIC_URL + "/port.png";
-const resumePdf = process.env.PUBLIC_URL + "/Subhash_Vadaparthi_Resume.pdf";
+const profileImage = "/My profile.jpg";
+const h1Image = "/h1.jpg";
+const h2Image = "/h2.png";
+const portImage = "/port.png";
+const resumePdf = "/Subhash_Vadaparthi_Resume.pdf";
 
 const Home = () => {
     const featuredProjects = [
