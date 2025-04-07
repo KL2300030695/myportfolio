@@ -33,7 +33,7 @@ const Projects = () => {
             description: "A modern, responsive portfolio website built with React.js, featuring a dark theme with cyan accents, smooth animations, and interactive components.",
             technologies: ["React.js", "CSS3", "JavaScript", "Responsive Design", "Modern UI"],
             image: portImage,
-            github: "https://github.com/KL2300030695/react-portfolio",
+            github: "https://github.com/KL2300030695/myportfolio",
             demo: "#"
         }
     ];
