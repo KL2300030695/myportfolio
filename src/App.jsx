@@ -12,11 +12,11 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route path="/" element={<Navigate to="/home" replace />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/myportfolio" element={<Navigate to="/myportfolio/home" replace />} />
+        <Route path="/myportfolio/home" element={<Home />} />
+        <Route path="/myportfolio/about" element={<About />} />
+        <Route path="/myportfolio/projects" element={<Projects />} />
+        <Route path="/myportfolio/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </div>

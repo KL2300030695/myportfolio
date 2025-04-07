@@ -3,11 +3,11 @@ import './Home.css';
 import { Link } from 'react-router-dom';
 
 // Import images from public folder
-const profileImage = "/My profile.jpg";
-const h1Image = "/h1.jpg";
-const h2Image = "/h2.png";
-const portImage = "/port.png";
-const resumePdf = "/Subhash_Vadaparthi_Resume.pdf";
+const profileImage = "/myportfolio/My profile.jpg";
+const h1Image = "/myportfolio/h1.jpg";
+const h2Image = "/myportfolio/h2.png";
+const portImage = "/myportfolio/port.png";
+const resumePdf = "/myportfolio/Subhash_Vadaparthi_Resume.pdf";
 
 const Home = () => {
     const featuredProjects = [

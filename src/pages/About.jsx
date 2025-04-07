@@ -2,10 +2,10 @@ import React from 'react';
 import './About.css';
 
 // Import images from public folder
-const cloudArtImage = "/cloud art.png";
-const cloudFounImage = "/cloud foun.png";
-const oracleImage = "/oracle.png";
-const salesforceImage = "/salesforce.png";
+const cloudArtImage = "/myportfolio/cloud art.png";
+const cloudFounImage = "/myportfolio/cloud foun.png";
+const oracleImage = "/myportfolio/oracle.png";
+const salesforceImage = "/myportfolio/salesforce.png";
 
 const About = () => {
     const education = [

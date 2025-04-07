@@ -3,9 +3,9 @@ import './Projects.css';
 import { Link } from 'react-router-dom';
 
 // Import images from public folder
-const h1Image = "/h1.jpg";
-const h2Image = "/h2.png";
-const portImage = "/port.png";
+const h1Image = "/myportfolio/h1.jpg";
+const h2Image = "/myportfolio/h2.png";
+const portImage = "/myportfolio/port.png";
 
 const Projects = () => {
     const projects = [

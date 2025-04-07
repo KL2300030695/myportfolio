@@ -7,10 +7,10 @@ const Navbar = () => {
     <nav className="navbar">
       <h1>Subhash Vadaparthi</h1>
       <ul>
-        <li><RouterLink to="/">Home</RouterLink></li>
-        <li><RouterLink to="/about">About</RouterLink></li>
-        <li><RouterLink to="/projects">Projects</RouterLink></li>
-        <li><RouterLink to="/contact">Contact</RouterLink></li>
+        <li><RouterLink to="/myportfolio/home">Home</RouterLink></li>
+        <li><RouterLink to="/myportfolio/about">About</RouterLink></li>
+        <li><RouterLink to="/myportfolio/projects">Projects</RouterLink></li>
+        <li><RouterLink to="/myportfolio/contact">Contact</RouterLink></li>
       </ul>
     </nav>
   )
