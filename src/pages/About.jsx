@@ -1,6 +1,12 @@
 import React from 'react';
 import './About.css';
 
+// Import images from public folder
+const cloudArtImage = "/cloud art.png";
+const cloudFounImage = "/cloud foun.png";
+const oracleImage = "/oracle.png";
+const salesforceImage = "/salesforce.png";
+
 const About = () => {
     const education = [
         {
@@ -36,29 +42,29 @@ const About = () => {
             title: "AWS Academy Cloud Architecting",
             issuer: "Amazon Web Services",
             year: "2024",
-            image: "/cloud art.png",
+            image: cloudArtImage,
             link: "https://www.credly.com/badges/a2dc5280-7c94-43ff-a3dd-4040d864731c/"
         },
         {
             title: "AWS Academy Cloud Foundations",
             issuer: "Amazon Web Services",
             year: "2024",
-            image: "/cloud foun.png",
+            image: cloudFounImage,
             link: "https://www.credly.com/badges/d4843a9d-cb4f-42a6-adb9-3b2bf5caab4f/"
         },
         {
             title: "Oracle AI Foundations Associate",
             issuer: "Oracle",
             year: "2024",
-            image: "/oracle.png",
-            link: "https://catalog-education.oracle.com/pls/certview/sharebadge?id=03BA9977CAF87D9D7B6932D33AF45136EC69664482D5D5E342DD7CD1DF343E54"
+            image: oracleImage,
+            link: "https://www.credly.com/badges/8a8a8a8a-8a8a-8a8a-8a8a-8a8a8a8a8a8a/"
         },
         {
-            title: "Salesforce AI Associate",
+            title: "Salesforce Developer",
             issuer: "Salesforce",
             year: "2024",
-            image: "/salesforce.png",
-            link: "https://trailhead.salesforce.com/en/credentials/certification-detail-print/?searchString=OOHwzBTlMCg+sNyCveLvxLhCBe9hX5XTB899ZsbimVrYgj+d1fQpo8AmDErpCU8h"
+            image: salesforceImage,
+            link: "https://trailhead.salesforce.com/en/credentials/verification/"
         }
     ];
 

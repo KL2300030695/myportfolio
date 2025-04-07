@@ -1,5 +1,11 @@
 import React from 'react';
 import './Projects.css';
+import { Link } from 'react-router-dom';
+
+// Import images from public folder
+const h1Image = "/h1.jpg";
+const h2Image = "/h2.png";
+const portImage = "/port.png";
 
 const Projects = () => {
     const projects = [
@@ -8,7 +14,7 @@ const Projects = () => {
             title: "Hospital Appointment System",
             description: "Full-stack system using Spring Boot, React.js, and MySQL. Features include RESTful APIs, real-time notifications, and automated appointment confirmations.",
             technologies: ["Spring Boot", "React.js", "MySQL", "RESTful APIs", "Postman"],
-            image: "/h1.jpg",
+            image: h1Image,
             github: "https://github.com/KL2300030695/HealthcareAppointmentSystem",
             demo: "#"
         },
@@ -17,7 +23,7 @@ const Projects = () => {
             title: "Hand Tracking and Finger Counting",
             description: "Python-based application using OpenCV and Mediapipe for real-time hand and finger landmark detection, gesture recognition, and performance optimization.",
             technologies: ["Python", "OpenCV", "Mediapipe", "Computer Vision", "AI"],
-            image: "/h2.png",
+            image: h2Image,
             github: "https://github.com/KL2300030695/FingerCounting",
             demo: "#"
         },
@@ -26,7 +32,7 @@ const Projects = () => {
             title: "Portfolio Website",
             description: "A modern, responsive portfolio website built with React.js, featuring a dark theme with cyan accents, smooth animations, and interactive components.",
             technologies: ["React.js", "CSS3", "JavaScript", "Responsive Design", "Modern UI"],
-            image: "/port.png",
+            image: portImage,
             github: "https://github.com/KL2300030695/react-portfolio",
             demo: "#"
         }

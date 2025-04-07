@@ -2,6 +2,13 @@ import React from 'react';
 import './Home.css';
 import { Link } from 'react-router-dom';
 
+// Import images from public folder
+const profileImage = "/My profile.jpg";
+const h1Image = "/h1.jpg";
+const h2Image = "/h2.png";
+const portImage = "/port.png";
+const resumePdf = "/Subhash_Vadaparthi_Resume.pdf";
+
 const Home = () => {
     const featuredProjects = [
         {
@@ -9,7 +16,7 @@ const Home = () => {
             title: "Hospital Appointment System",
             description: "Full-stack system using Spring Boot, React.js, and MySQL. Features include RESTful APIs, real-time notifications, and automated appointment confirmations.",
             technologies: ["Spring Boot", "React.js", "MySQL", "RESTful APIs", "Postman"],
-            image: "/h1.jpg",
+            image: h1Image,
             github: "https://github.com/KL2300030695/HealthcareAppointmentSystem",
             demo: "#"
         },
@@ -18,7 +25,7 @@ const Home = () => {
             title: "Hand Tracking and Finger Counting",
             description: "Python-based application using OpenCV and Mediapipe for real-time hand and finger landmark detection, gesture recognition, and performance optimization.",
             technologies: ["Python", "OpenCV", "Mediapipe", "Computer Vision", "AI"],
-            image: "/h2.png",
+            image: h2Image,
             github: "https://github.com/KL2300030695/FingerCounting",
             demo: "#"
         },
@@ -27,8 +34,8 @@ const Home = () => {
             title: "Portfolio Website",
             description: "A modern, responsive portfolio website built with React.js, featuring a dark theme with cyan accents, smooth animations, and interactive components.",
             technologies: ["React.js", "CSS3", "JavaScript", "Responsive Design", "Modern UI"],
-            image: "/port.png",
-            github: "https://github.com/KL2300030695/Portfolio",
+            image: portImage,
+            github: "https://github.com/KL2300030695/react-portfolio",
             demo: "#"
         }
     ];
@@ -36,8 +43,8 @@ const Home = () => {
     return (
         <div className="home-container">
             <section className="profile-section">
-                <div className="profile-image-container">
-                    <img src="/My profile.jpg" alt="Subhash Vadaparthi" className="profile-image" />
+                <div className="profile-image">
+                    <img src={profileImage} alt="Subhash Vadaparthi" />
                 </div>
                 <div className="profile-content">
                     <h1>Subhash Vadaparthi</h1>
@@ -54,22 +61,9 @@ const Home = () => {
                             <i className="fab fa-youtube"></i>
                         </a>
                     </div>
-                    {/* <a 
-                        href="/web resume.pdf" 
-                        download="Subhash_Vadaparthi_Resume.pdf" 
-                        className="resume-btn"
-                    >
+                    <a href={resumePdf} download="Subhash_Vadaparthi_Resume.pdf" className="resume-btn">
                         <i className="fas fa-download"></i> Download Resume
-                    </a> */}
-                    <a 
-    href="/Subhash_Vadaparthi_Resume.pdf" 
-    download="Subhash_Vadaparthi_Resume.pdf" 
-    className="resume-btn"
->
-    <i className="fas fa-download"></i> Download Resume
-</a>
-
-
+                    </a>
                 </div>
             </section>
 
