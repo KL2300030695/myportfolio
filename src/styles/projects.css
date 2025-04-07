@@ -1,0 +1,15 @@
+.projects {
+    padding: 2rem;
+    background-color: #ffffff;
+    text-align: center;
+  }
+  
+  .projects h1 {
+    font-size: 2rem;
+    color: #004080;
+  }
+  
+  .projects p {
+    font-size: 1.2rem;
+    color: #333;
+  }
