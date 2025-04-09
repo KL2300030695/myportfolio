@@ -35,7 +35,7 @@ const Home = () => {
             description: "A modern, responsive portfolio website built with React.js, featuring a dark theme with cyan accents, smooth animations, and interactive components.",
             technologies: ["React.js", "CSS3", "JavaScript", "Responsive Design", "Modern UI"],
             image: portImage,
-            github: "https://github.com/KL2300030695/react-portfolio",
+            github: "https://github.com/KL2300030695/myportfolio",
             demo: "#"
         }
     ];
@@ -51,7 +51,7 @@ const Home = () => {
                     <p className="profile-title">Full Stack Developer</p>
                     <p className="profile-location">Kakinada, Andhra Pradesh</p>
                     <div className="profile-links">
-                        <a href="https://www.linkedin.com/in/subhash-vadaparthi-0a0a2a2a2a/" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.linkedin.com/in/vadaparthisubhash/" target="_blank" rel="noopener noreferrer">
                             <i className="fab fa-linkedin"></i>
                         </a>
                         <a href="https://github.com/KL2300030695" target="_blank" rel="noopener noreferrer">
