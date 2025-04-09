@@ -57,14 +57,14 @@ const About = () => {
             issuer: "Oracle",
             year: "2024",
             image: oracleImage,
-            link: "https://www.credly.com/badges/8a8a8a8a-8a8a-8a8a-8a8a-8a8a8a8a8a8a/"
+            link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=03BA9977CAF87D9D7B6932D33AF45136EC69664482D5D5E342DD7CD1DF343E54"
         },
         {
             title: "Salesforce Developer",
             issuer: "Salesforce",
             year: "2024",
             image: salesforceImage,
-            link: "https://trailhead.salesforce.com/en/credentials/verification/"
+            link: "https://trailhead.salesforce.com/en/credentials/certification-detail-print/?searchString=OOHwzBTlMCg+sNyCveLvxLhCBe9hX5XTB899ZsbimVrYgj+d1fQpo8AmDErpCU8h"
         }
     ];
 
