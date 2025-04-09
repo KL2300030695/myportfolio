@@ -106,7 +106,7 @@ const Home = () => {
                         </div>
                     ))}
                 </div>
-                <Link to="/projects" className="view-all-btn">
+                <Link to="/myportfolio/projects" className="view-all-btn">
                     View All Projects
                 </Link>
             </section>
