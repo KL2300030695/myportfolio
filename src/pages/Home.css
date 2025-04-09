@@ -376,4 +376,39 @@
     padding: 2rem 0;
     color: #666;
     border-top: 1px solid #eee;
+}
+
+/* View All Projects Button */
+.view-all-projects {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.view-projects-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, #00ffff, #0088ff);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2);
+}
+
+.view-projects-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 255, 255, 0.3);
+    background: linear-gradient(45deg, #0088ff, #00ffff);
+}
+
+.view-projects-btn i {
+    transition: transform 0.3s ease;
+}
+
+.view-projects-btn:hover i {
+    transform: translateX(5px);
 } 

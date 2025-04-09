@@ -23,7 +23,7 @@ const About = () => {
         },
         {
             degree: "Secondary School Certificate",
-            institution: "Sri Chaitanya School",
+            institution: "Akshara School",
             year: "2009 - 2021",
             cgpa: "9.67 CGPA"
         }
