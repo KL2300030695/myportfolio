@@ -25,7 +25,7 @@ const Contact = () => {
     const socialLinks = [
         {
             platform: "LinkedIn",
-            url: "https://www.linkedin.com/in/subhash-vadaparthi-0a0a2a2a2a/",
+            url: "https://www.linkedin.com/in/vadaparthisubhash/",
             icon: "fab fa-linkedin"
         },
         {

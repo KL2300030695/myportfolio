@@ -51,7 +51,7 @@ const Home = () => {
                     <p className="profile-title">Full Stack Developer</p>
                     <p className="profile-location">Kakinada, Andhra Pradesh</p>
                     <div className="profile-links">
-                        <a href="https://www.linkedin.com/in/subhash-vadaparthi-0a0a2a2a2a/" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.linkedin.com/in/vadaparthisubhash/" target="_blank" rel="noopener noreferrer">
                             <i className="fab fa-linkedin"></i>
                         </a>
                         <a href="https://github.com/KL2300030695" target="_blank" rel="noopener noreferrer">
