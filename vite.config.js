@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: "/myportfolio"
+  // base: "/myportfolio" // Commented out for local development
 });
 
 

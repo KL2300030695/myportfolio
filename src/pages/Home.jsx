@@ -3,11 +3,11 @@ import './Home.css';
 import { Link } from 'react-router-dom';
 
 // Import images from public folder
-const profileImage = "/myportfolio/My profile.jpg";
-const h1Image = "/myportfolio/h1.jpg";
-const h2Image = "/myportfolio/h2.png";
-const portImage = "/myportfolio/port.png";
-const resumePdf = "/myportfolio/Subhash_Vadaparthi_Resume.pdf";
+const profileImage = "/My profile.jpg";
+const h1Image = "/h1.jpg";
+const h2Image = "/h2.png";
+const portImage = "/port.png";
+const resumePdf = "/Subhash_Vadaparthi_Resume.pdf";
 
 const Home = () => {
     const featuredProjects = [
@@ -57,7 +57,7 @@ const Home = () => {
                             <a href={resumePdf} download="Subhash_Vadaparthi_Resume.pdf" className="btn-primary">
                                 <i className="fas fa-download"></i> Download CV
                             </a>
-                            <Link to="/myportfolio/projects" className="btn-secondary">
+                            <Link to="/projects" className="btn-secondary">
                                 <i className="fas fa-code"></i> View Projects
                             </Link>
                         </div>
@@ -123,7 +123,7 @@ const Home = () => {
                     ))}
                 </div>
                 <div className="view-all-projects">
-                    <Link to="/myportfolio/projects" className="view-projects-btn">
+                    <Link to="/projects" className="view-projects-btn">
                         View All Projects <i className="fas fa-arrow-right"></i>
                     </Link>
                 </div>

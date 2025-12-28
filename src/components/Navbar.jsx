@@ -14,7 +14,7 @@ const Navbar = () => {
         <ul className="navbar-links-new">
           <li>
             <NavLink
-              to="/myportfolio/home"
+              to="/home"
               className={({ isActive }) =>
                 `navbar-link-new${isActive ? " active-new" : ""}`
               }
@@ -24,7 +24,7 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink
-              to="/myportfolio/about"
+              to="/about"
               className={({ isActive }) =>
                 `navbar-link${isActive ? " active" : ""}`
               }
@@ -34,7 +34,7 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink
-              to="/myportfolio/projects"
+              to="/projects"
               className={({ isActive }) =>
                 `navbar-link${isActive ? " active" : ""}`
               }
@@ -44,7 +44,7 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink
-              to="/myportfolio/contact"
+              to="/contact"
               className={({ isActive }) =>
                 `navbar-link${isActive ? " active" : ""}`
               }

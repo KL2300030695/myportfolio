@@ -6,17 +6,19 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
       <Routes>
-        <Route path="/myportfolio" element={<Navigate to="/myportfolio/home" replace />} />
-        <Route path="/myportfolio/home" element={<Home />} />
-        <Route path="/myportfolio/about" element={<About />} />
-        <Route path="/myportfolio/projects" element={<Projects />} />
-        <Route path="/myportfolio/contact" element={<Contact />} />
+        <Route path="/" element={<Navigate to="/home" replace />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<Navigate to="/home" replace />} />
       </Routes>
       <Footer />
     </div>
