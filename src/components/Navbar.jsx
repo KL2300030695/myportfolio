@@ -1,17 +1,59 @@
 import React from "react"
-import { Link as RouterLink } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import "../styles/navbar.css"
 
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <h1>Subhash Vadaparthi</h1>
-      <ul>
-        <li><RouterLink to="/myportfolio/home">Home</RouterLink></li>
-        <li><RouterLink to="/myportfolio/about">About</RouterLink></li>
-        <li><RouterLink to="/myportfolio/projects">Projects</RouterLink></li>
-        <li><RouterLink to="/myportfolio/contact">Contact</RouterLink></li>
-      </ul>
+      <div className="navbar-inner">
+        <div className="navbar-brand">
+          <span className="navbar-title accent-text">Subhash Vadaparthi</span>
+          <span className="navbar-subtitle">AI Systems · Computer Vision · Full Stack</span>
+          <span className="navbar-tagline">Building innovative AI solutions</span>
+        </div>
+        <ul className="navbar-links-new">
+          <li>
+            <NavLink
+              to="/myportfolio/home"
+              className={({ isActive }) =>
+                `navbar-link-new${isActive ? " active-new" : ""}`
+              }
+            >
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/myportfolio/about"
+              className={({ isActive }) =>
+                `navbar-link${isActive ? " active" : ""}`
+              }
+            >
+              About
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/myportfolio/projects"
+              className={({ isActive }) =>
+                `navbar-link${isActive ? " active" : ""}`
+              }
+            >
+              Projects
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/myportfolio/contact"
+              className={({ isActive }) =>
+                `navbar-link${isActive ? " active" : ""}`
+              }
+            >
+              Contact
+            </NavLink>
+          </li>
+        </ul>
+      </div>
     </nav>
   )
 }

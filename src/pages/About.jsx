@@ -30,11 +30,10 @@ const About = () => {
     ];
 
     const skills = {
-        languages: ["Java", "Python", "JavaScript", "C", "SQL"],
-        webDevelopment: ["HTML5", "CSS3", "React.js", "Spring Boot", "RESTful APIs"],
-        databases: ["MySQL", "MongoDB", "PostgreSQL"],
-        cloud: ["AWS", "Docker", "Linux"],
-        tools: ["Git", "Postman", "VS Code", "Eclipse", "IntelliJ IDEA"]
+        aiMl: ["Python", "TensorFlow", "PyTorch", "Scikit-learn", "Deep Learning", "Neural Networks"],
+        computerVision: ["OpenCV", "MediaPipe", "YOLO", "Image Processing", "Object Detection", "Hand Tracking"],
+        fullStack: ["React.js", "Spring Boot", "Node.js", "JavaScript", "RESTful APIs", "MySQL"],
+        cloudTools: ["AWS", "Docker", "Git", "MongoDB", "PostgreSQL", "Linux"]
     };
 
     const certifications = [
@@ -70,13 +69,42 @@ const About = () => {
 
     return (
         <div className="about-container">
-            <section className="about-section">
-                <h2>Professional Summary</h2>
-                <p>
-                    I am a passionate Full Stack Developer with expertise in Java, Spring Boot, React.js, and various web technologies. 
-                    I have a strong foundation in data structures, algorithms, and problem-solving. 
-                    My experience includes developing full-stack applications, implementing RESTful APIs, and working with databases.
-                </p>
+            <section className="about-section glass-panel">
+                <h2 className="section-title">About Me</h2>
+                <div className="about-content">
+                    <p className="about-text">
+                        I'm a passionate developer specializing in <span className="accent-text">AI Systems</span>, 
+                        <span className="accent-text"> Computer Vision</span>, and <span className="accent-text">Full-Stack Development</span>. 
+                        My journey combines deep learning research with practical software engineering, creating intelligent solutions 
+                        that solve real-world problems.
+                    </p>
+                    <p className="about-text">
+                        With expertise in Python, OpenCV, MediaPipe, and modern web technologies, I build systems that process 
+                        visual data, understand patterns, and deliver seamless user experiences. My work spans from computer vision 
+                        applications to full-stack AI-powered platforms.
+                    </p>
+                    <div className="interests">
+                        <h3>Interests & Focus Areas</h3>
+                        <div className="interests-grid">
+                            <div className="interest-item">
+                                <i className="fas fa-brain"></i>
+                                <span>Machine Learning</span>
+                            </div>
+                            <div className="interest-item">
+                                <i className="fas fa-eye"></i>
+                                <span>Computer Vision</span>
+                            </div>
+                            <div className="interest-item">
+                                <i className="fas fa-network-wired"></i>
+                                <span>Neural Networks</span>
+                            </div>
+                            <div className="interest-item">
+                                <i className="fas fa-code"></i>
+                                <span>Full-Stack AI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <section className="education-section">
@@ -94,39 +122,48 @@ const About = () => {
             </section>
 
             <section className="skills-section">
-                <h2>Skills & Expertise</h2>
+                <h2 className="section-title">Skills & Expertise</h2>
                 <div className="skills-grid">
-                    <div className="skill-category">
-                        <h3>Languages</h3>
+                    <div className="skill-category glass-panel">
+                        <div className="skill-icon">
+                            <i className="fas fa-brain"></i>
+                        </div>
+                        <h3>AI & Machine Learning</h3>
                         <div className="skills-list">
-                            {skills.languages.map((skill, index) => (
+                            {skills.aiMl.map((skill, index) => (
                                 <span key={index} className="skill-tag">{skill}</span>
                             ))}
                         </div>
                     </div>
-                    <div className="skill-category">
-                        <h3>Web Development</h3>
+                    <div className="skill-category glass-panel">
+                        <div className="skill-icon">
+                            <i className="fas fa-eye"></i>
+                        </div>
+                        <h3>Computer Vision</h3>
                         <div className="skills-list">
-                            {skills.webDevelopment.map((skill, index) => (
+                            {skills.computerVision.map((skill, index) => (
                                 <span key={index} className="skill-tag">{skill}</span>
                             ))}
                         </div>
                     </div>
-                    <div className="skill-category">
-                        <h3>Databases</h3>
+                    <div className="skill-category glass-panel">
+                        <div className="skill-icon">
+                            <i className="fas fa-code"></i>
+                        </div>
+                        <h3>Full Stack Development</h3>
                         <div className="skills-list">
-                            {skills.databases.map((skill, index) => (
+                            {skills.fullStack.map((skill, index) => (
                                 <span key={index} className="skill-tag">{skill}</span>
                             ))}
                         </div>
                     </div>
-                    <div className="skill-category">
+                    <div className="skill-category glass-panel">
+                        <div className="skill-icon">
+                            <i className="fas fa-cloud"></i>
+                        </div>
                         <h3>Cloud & Tools</h3>
                         <div className="skills-list">
-                            {skills.cloud.map((skill, index) => (
-                                <span key={index} className="skill-tag">{skill}</span>
-                            ))}
-                            {skills.tools.map((skill, index) => (
+                            {skills.cloudTools.map((skill, index) => (
                                 <span key={index} className="skill-tag">{skill}</span>
                             ))}
                         </div>

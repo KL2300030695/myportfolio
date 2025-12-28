@@ -63,7 +63,10 @@ const Projects = () => {
 
     return (
         <div className="projects-container">
-            <h1>My Projects</h1>
+            <div className="projects-header">
+                <h1 className="section-title">My Projects</h1>
+                <p className="projects-subtitle">AI-Powered Solutions & Full-Stack Applications</p>
+            </div>
             <div className="projects-grid">
                 {projects.map((project) => (
                     <div key={project.id} className="project-card">

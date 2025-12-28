@@ -42,37 +42,53 @@ const Home = () => {
 
     return (
         <div className="home-container">
-            <section className="profile-section">
-                <div className="profile-image">
-                    <img src={profileImage} alt="Subhash Vadaparthi" />
-                </div>
-                <div className="profile-content">
-                    <h1>Subhash Vadaparthi</h1>
-                    <p className="profile-title">Full Stack Developer</p>
-                    <p className="profile-location">Kakinada, Andhra Pradesh</p>
-                    <div className="profile-links">
-                        <a href="https://www.linkedin.com/in/vadaparthisubhash/" target="_blank" rel="noopener noreferrer">
-                            <i className="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/KL2300030695" target="_blank" rel="noopener noreferrer">
-                            <i className="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.youtube.com/@ThinkingUpgraded" target="_blank" rel="noopener noreferrer">
-                            <i className="fab fa-youtube"></i>
-                        </a>
+            {/* Hero Section */}
+            <section className="hero-section">
+                <div className="hero-content">
+                    <div className="hero-text">
+                        <p className="hero-greeting">Hi, I'm</p>
+                        <h1 className="hero-name accent-text">Subhash Vadaparthi</h1>
+                        <p className="hero-tagline">AI Systems | Computer Vision | Full Stack Developer</p>
+                        <p className="hero-description">
+                            Building intelligent systems that bridge the gap between AI research and real-world applications. 
+                            Specialized in Computer Vision, Machine Learning, and Full-Stack Development.
+                        </p>
+                        <div className="hero-buttons">
+                            <a href={resumePdf} download="Subhash_Vadaparthi_Resume.pdf" className="btn-primary">
+                                <i className="fas fa-download"></i> Download CV
+                            </a>
+                            <Link to="/myportfolio/projects" className="btn-secondary">
+                                <i className="fas fa-code"></i> View Projects
+                            </Link>
+                        </div>
+                        <div className="hero-social">
+                            <a href="https://www.linkedin.com/in/vadaparthisubhash/" target="_blank" rel="noopener noreferrer" className="social-icon">
+                                <i className="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/KL2300030695" target="_blank" rel="noopener noreferrer" className="social-icon">
+                                <i className="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@ThinkingUpgraded" target="_blank" rel="noopener noreferrer" className="social-icon">
+                                <i className="fab fa-youtube"></i>
+                            </a>
+                        </div>
                     </div>
-                    <a href={resumePdf} download="Subhash_Vadaparthi_Resume.pdf" className="resume-btn">
-                        <i className="fas fa-download"></i> Download Resume
-                    </a>
+                    <div className="hero-image-wrapper">
+                        <div className="profile-image-glow"></div>
+                        <div className="profile-image-container">
+                            <img src={profileImage} alt="Subhash Vadaparthi" className="profile-image" />
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <section className="about-section">
-                <h2>About Me</h2>
-                <p>
-                    I am a passionate Full Stack Developer with expertise in Java, Spring Boot, React.js, and various web technologies. 
-                    I have a strong foundation in data structures, algorithms, and problem-solving. 
-                    My experience includes developing full-stack applications, implementing RESTful APIs, and working with databases.
+            {/* Brief Intro */}
+            <section className="intro-section glass-panel">
+                <p className="intro-text">
+                    I'm a passionate developer specializing in <span className="accent-text">AI Systems</span>, 
+                    <span className="accent-text"> Computer Vision</span>, and <span className="accent-text">Full-Stack Development</span>. 
+                    I transform complex algorithms into practical solutions, combining deep learning expertise with modern web technologies 
+                    to create intelligent applications that make a difference.
                 </p>
             </section>
 
@@ -114,44 +130,58 @@ const Home = () => {
             </section>
 
             <section className="skills-section">
-                <h2>Skills</h2>
+                <h2 className="section-title">Core Expertise</h2>
                 <div className="skills-grid">
-                    <div className="skill-category">
-                        <h3>Languages</h3>
+                    <div className="skill-category glass-panel">
+                        <div className="skill-icon">
+                            <i className="fas fa-brain"></i>
+                        </div>
+                        <h3>AI & Machine Learning</h3>
                         <div className="skills-list">
-                            <span>Java</span>
-                            <span>Python</span>
-                            <span>JavaScript</span>
-                            <span>C</span>
-                            <span>SQL</span>
+                            <span className="skill-tag">Python</span>
+                            <span className="skill-tag">TensorFlow</span>
+                            <span className="skill-tag">PyTorch</span>
+                            <span className="skill-tag">Scikit-learn</span>
+                            <span className="skill-tag">Deep Learning</span>
                         </div>
                     </div>
-                    <div className="skill-category">
-                        <h3>Web Development</h3>
+                    <div className="skill-category glass-panel">
+                        <div className="skill-icon">
+                            <i className="fas fa-eye"></i>
+                        </div>
+                        <h3>Computer Vision</h3>
                         <div className="skills-list">
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>React.js</span>
-                            <span>Spring Boot</span>
-                            <span>RESTful APIs</span>
+                            <span className="skill-tag">OpenCV</span>
+                            <span className="skill-tag">MediaPipe</span>
+                            <span className="skill-tag">YOLO</span>
+                            <span className="skill-tag">Image Processing</span>
+                            <span className="skill-tag">Object Detection</span>
                         </div>
                     </div>
-                    <div className="skill-category">
-                        <h3>Databases</h3>
+                    <div className="skill-category glass-panel">
+                        <div className="skill-icon">
+                            <i className="fas fa-code"></i>
+                        </div>
+                        <h3>Full Stack</h3>
                         <div className="skills-list">
-                            <span>MySQL</span>
-                            <span>MongoDB</span>
-                            <span>PostgreSQL</span>
+                            <span className="skill-tag">React.js</span>
+                            <span className="skill-tag">Spring Boot</span>
+                            <span className="skill-tag">Node.js</span>
+                            <span className="skill-tag">RESTful APIs</span>
+                            <span className="skill-tag">JavaScript</span>
                         </div>
                     </div>
-                    <div className="skill-category">
-                        <h3>Tools & Others</h3>
+                    <div className="skill-category glass-panel">
+                        <div className="skill-icon">
+                            <i className="fas fa-cloud"></i>
+                        </div>
+                        <h3>Cloud & DevOps</h3>
                         <div className="skills-list">
-                            <span>Git</span>
-                            <span>Docker</span>
-                            <span>Postman</span>
-                            <span>AWS</span>
-                            <span>Linux</span>
+                            <span className="skill-tag">AWS</span>
+                            <span className="skill-tag">Docker</span>
+                            <span className="skill-tag">Git</span>
+                            <span className="skill-tag">MySQL</span>
+                            <span className="skill-tag">MongoDB</span>
                         </div>
                     </div>
                 </div>
