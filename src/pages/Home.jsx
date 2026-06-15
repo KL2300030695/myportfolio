@@ -1,193 +1,390 @@
-import React from 'react';
-import './Home.css';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import './Home.css';
 
-// Import images from public folder
 const profileImage = "/My profile.jpg";
-const h1Image = "/h1.jpg";
-const h2Image = "/h2.png";
-const portImage = "/port.png";
 const resumePdf = "/Subhash_Vadaparthi_Resume.pdf";
 
-const Home = () => {
-    const featuredProjects = [
-        {
-            id: 1,
-            title: "Hospital Appointment System",
-            description: "Full-stack system using Spring Boot, React.js, and MySQL. Features include RESTful APIs, real-time notifications, and automated appointment confirmations.",
-            technologies: ["Spring Boot", "React.js", "MySQL", "RESTful APIs", "Postman"],
-            image: h1Image,
-            github: "https://github.com/KL2300030695/HealthcareAppointmentSystem",
-            demo: "#"
-        },
-        {
-            id: 2,
-            title: "Hand Tracking and Finger Counting",
-            description: "Python-based application using OpenCV and Mediapipe for real-time hand and finger landmark detection, gesture recognition, and performance optimization.",
-            technologies: ["Python", "OpenCV", "Mediapipe", "Computer Vision", "AI"],
-            image: h2Image,
-            github: "https://github.com/KL2300030695/FingerCounting",
-            demo: "#"
-        },
-        {
-            id: 3,
-            title: "Portfolio Website",
-            description: "A modern, responsive portfolio website built with React.js, featuring a dark theme with cyan accents, smooth animations, and interactive components.",
-            technologies: ["React.js", "CSS3", "JavaScript", "Responsive Design", "Modern UI"],
-            image: portImage,
-            github: "https://github.com/KL2300030695/react-portfolio",
-            demo: "#"
+/* ── Animated counter hook ── */
+const useCountUp = (target, duration = 1800) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const started = useRef(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !started.current) {
+          started.current = true;
+          let start = 0;
+          const increment = target / (duration / 16);
+          const timer = setInterval(() => {
+            start += increment;
+            if (start >= target) {
+              setCount(target);
+              clearInterval(timer);
+            } else {
+              setCount(Math.floor(start));
+            }
+          }, 16);
         }
-    ];
-
-    return (
-        <div className="home-container">
-            {/* Hero Section */}
-            <section className="hero-section">
-                <div className="hero-content">
-                    <div className="hero-text">
-                        <p className="hero-greeting">Hi, I'm</p>
-                        <h1 className="hero-name accent-text">Subhash Vadaparthi</h1>
-                        <p className="hero-tagline">AI Systems | Computer Vision | Full Stack Developer</p>
-                        <p className="hero-description">
-                            Building intelligent systems that bridge the gap between AI research and real-world applications. 
-                            Specialized in Computer Vision, Machine Learning, and Full-Stack Development.
-                        </p>
-                        <div className="hero-buttons">
-                            <a href={resumePdf} download="Subhash_Vadaparthi_Resume.pdf" className="btn-primary">
-                                <i className="fas fa-download"></i> Download CV
-                            </a>
-                            <Link to="/projects" className="btn-secondary">
-                                <i className="fas fa-code"></i> View Projects
-                            </Link>
-                        </div>
-                        <div className="hero-social">
-                            <a href="https://www.linkedin.com/in/vadaparthisubhash/" target="_blank" rel="noopener noreferrer" className="social-icon">
-                                <i className="fab fa-linkedin"></i>
-                            </a>
-                            <a href="https://github.com/KL2300030695" target="_blank" rel="noopener noreferrer" className="social-icon">
-                                <i className="fab fa-github"></i>
-                            </a>
-                            <a href="https://www.youtube.com/@ThinkingUpgraded" target="_blank" rel="noopener noreferrer" className="social-icon">
-                                <i className="fab fa-youtube"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div className="hero-image-wrapper">
-                        <div className="profile-image-glow"></div>
-                        <div className="profile-image-container">
-                            <img src={profileImage} alt="Subhash Vadaparthi" className="profile-image" />
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Brief Intro */}
-            <section className="intro-section glass-panel">
-                <p className="intro-text">
-                    I'm a passionate developer specializing in <span className="accent-text">AI Systems</span>, 
-                    <span className="accent-text"> Computer Vision</span>, and <span className="accent-text">Full-Stack Development</span>. 
-                    I transform complex algorithms into practical solutions, combining deep learning expertise with modern web technologies 
-                    to create intelligent applications that make a difference.
-                </p>
-            </section>
-
-            <section className="projects-section">
-                <h2>Featured Projects</h2>
-                <div className="projects-grid">
-                    {featuredProjects.map((project) => (
-                        <div key={project.id} className="project-card">
-                            <div className="project-image">
-                                <img src={project.image} alt={project.title} />
-                            </div>
-                            <div className="project-content">
-                                <h2>{project.title}</h2>
-                                <p>{project.description}</p>
-                                <div className="technologies">
-                                    {project.technologies.map((tech, index) => (
-                                        <span key={index} className="tech-tag">{tech}</span>
-                                    ))}
-                                </div>
-                                <div className="project-links">
-                                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="github-link">
-                                        <i className="fab fa-github"></i> GitHub
-                                    </a>
-                                    {project.demo !== "#" && (
-                                        <a href={project.demo} target="_blank" rel="noopener noreferrer" className="demo-link">
-                                            <i className="fas fa-external-link-alt"></i> Demo
-                                        </a>
-                                    )}
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-                <div className="view-all-projects">
-                    <Link to="/projects" className="view-projects-btn">
-                        View All Projects <i className="fas fa-arrow-right"></i>
-                    </Link>
-                </div>
-            </section>
-
-            <section className="skills-section">
-                <h2 className="section-title">Core Expertise</h2>
-                <div className="skills-grid">
-                    <div className="skill-category glass-panel">
-                        <div className="skill-icon">
-                            <i className="fas fa-brain"></i>
-                        </div>
-                        <h3>AI & Machine Learning</h3>
-                        <div className="skills-list">
-                            <span className="skill-tag">Python</span>
-                            <span className="skill-tag">TensorFlow</span>
-                            <span className="skill-tag">PyTorch</span>
-                            <span className="skill-tag">Scikit-learn</span>
-                            <span className="skill-tag">Deep Learning</span>
-                        </div>
-                    </div>
-                    <div className="skill-category glass-panel">
-                        <div className="skill-icon">
-                            <i className="fas fa-eye"></i>
-                        </div>
-                        <h3>Computer Vision</h3>
-                        <div className="skills-list">
-                            <span className="skill-tag">OpenCV</span>
-                            <span className="skill-tag">MediaPipe</span>
-                            <span className="skill-tag">YOLO</span>
-                            <span className="skill-tag">Image Processing</span>
-                            <span className="skill-tag">Object Detection</span>
-                        </div>
-                    </div>
-                    <div className="skill-category glass-panel">
-                        <div className="skill-icon">
-                            <i className="fas fa-code"></i>
-                        </div>
-                        <h3>Full Stack</h3>
-                        <div className="skills-list">
-                            <span className="skill-tag">React.js</span>
-                            <span className="skill-tag">Spring Boot</span>
-                            <span className="skill-tag">Node.js</span>
-                            <span className="skill-tag">RESTful APIs</span>
-                            <span className="skill-tag">JavaScript</span>
-                        </div>
-                    </div>
-                    <div className="skill-category glass-panel">
-                        <div className="skill-icon">
-                            <i className="fas fa-cloud"></i>
-                        </div>
-                        <h3>Cloud & DevOps</h3>
-                        <div className="skills-list">
-                            <span className="skill-tag">AWS</span>
-                            <span className="skill-tag">Docker</span>
-                            <span className="skill-tag">Git</span>
-                            <span className="skill-tag">MySQL</span>
-                            <span className="skill-tag">MongoDB</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
+      },
+      { threshold: 0.3 }
     );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [target, duration]);
+
+  return [count, ref];
+};
+
+/* ── Live clock ── */
+const useClock = () => {
+  const [time, setTime] = useState('');
+  useEffect(() => {
+    const tick = () => {
+      const now = new Date();
+      setTime(
+        now.toLocaleTimeString('en-IN', {
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: false,
+          timeZone: 'Asia/Kolkata',
+        }) + ' IST'
+      );
+    };
+    tick();
+    const id = setInterval(tick, 1000);
+    return () => clearInterval(id);
+  }, []);
+  return time;
+};
+
+/* ── Scroll reveal hook ── */
+const useReveal = () => {
+  const ref = useRef(null);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+    const children = ref.current?.querySelectorAll('.reveal');
+    children?.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+  return ref;
+};
+
+const featuredProjects = [
+  {
+    id: 1,
+    num: '01',
+    title: 'SurakshaPay AI',
+    subtitle: 'AI-powered fraud detection payment system',
+    description:
+      'Intelligent fintech security system using computer vision and AI for real-time fraud detection, face verification, and transaction risk scoring.',
+    tags: ['Python', 'Computer Vision', 'AI/ML', 'FinTech'],
+    metrics: [
+      { value: 'Real-time', label: 'fraud detection' },
+      { value: 'CV', label: 'face verification' },
+    ],
+    github: 'https://github.com/KL2300030695/VisionRise-s-SurakshaPay-AI',
+    image: '/proj-surakshapay.png',
+  },
+  {
+    id: 2,
+    num: '02',
+    title: 'AI Placement Copilot',
+    subtitle: 'Intelligent HRTech placement dashboard',
+    description:
+      'HRTech dashboard automating candidate shortlisting, resume parsing, and fitment scoring for academic and enterprise placement activities.',
+    tags: ['Python', 'AI/ML', 'NLP', 'React.js'],
+    metrics: [
+      { value: 'Auto', label: 'shortlisting' },
+      { value: 'NLP', label: 'resume parsing' },
+    ],
+    github: 'https://github.com/KL2300030695/AI-Placement-Copilot',
+    image: '/proj-placement.png',
+  },
+  {
+    id: 3,
+    num: '03',
+    title: 'CodeArena',
+    subtitle: 'Client-side coding practice platform',
+    description:
+      'A premium coding practice platform for TCS NQT prep with a built-in code editor, live execution engine, and test case validation — all in-browser.',
+    tags: ['JavaScript', 'HTML/CSS', 'Code Editor', 'Education'],
+    metrics: [
+      { value: 'Zero', label: 'backend needed' },
+      { value: 'Live', label: 'code execution' },
+    ],
+    github: 'https://github.com/KL2300030695/CodeArena',
+    image: '/proj-codearena.png',
+  },
+];
+
+const Home = () => {
+  const clock = useClock();
+  const pageRef = useReveal();
+
+  const [projectCount, projectRef] = useCountUp(8);
+  const [techCount, techRef] = useCountUp(15);
+  const [domainCount, domainRef] = useCountUp(5);
+
+  return (
+    <div className="home-container" ref={pageRef}>
+      {/* ═══════════ HERO ═══════════ */}
+      <section className="hero" aria-labelledby="hero-name">
+        <div className="hero-grid" aria-hidden="true"></div>
+        <div className="hero-glow" aria-hidden="true"></div>
+
+        <div className="hero-meta">
+          <span className="dot dot-live" aria-hidden="true"></span>
+          <span>OPERATOR · ON DUTY</span>
+          <span className="dim">/</span>
+          <span>{clock}</span>
+          <span className="dim">/</span>
+          <span>INDIA · 17.38°N 78.49°E</span>
+        </div>
+
+        <div className="hero-content">
+          <div className="hero-text">
+            <h1 id="hero-name" className="hero-name">
+              <span className="hero-line">Subhash</span>
+              <span className="hero-line hero-line-2">
+                Vadaparthi<em className="hero-cursor" aria-hidden="true"></em>
+              </span>
+            </h1>
+
+            <p className="hero-role">
+              <span>AI Systems</span>
+              <span className="dim">·</span>
+              <span>Computer Vision</span>
+              <span className="dim">·</span>
+              <span>Full Stack Developer</span>
+            </p>
+
+            <p className="hero-lede">
+              Building intelligent systems that bridge AI research and real-world applications. 
+              I turn complex algorithms into practical solutions — combining deep learning expertise 
+              with modern web technologies to create applications that make a difference.
+            </p>
+
+            <div className="hero-cta">
+              <Link to="/projects" className="btn btn-primary">
+                <span>View Projects</span>
+                <i className="fas fa-arrow-right"></i>
+              </Link>
+              <Link to="/contact" className="btn btn-ghost">
+                <span className="dot dot-warm" aria-hidden="true"></span>
+                Contact Me
+              </Link>
+              <a href={resumePdf} download className="btn btn-ghost">
+                <i className="fas fa-download"></i>
+                Download CV
+              </a>
+            </div>
+
+            <div className="hero-social">
+              <a href="https://www.linkedin.com/in/vadaparthisubhash/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <i className="fab fa-linkedin"></i>
+              </a>
+              <a href="https://github.com/KL2300030695" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <i className="fab fa-github"></i>
+              </a>
+              <a href="https://www.youtube.com/@ThinkingUpgraded" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <i className="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <div className="hero-image-wrapper">
+            <div className="hero-image-ring" aria-hidden="true"></div>
+            <div className="hero-image-container">
+              <img src={profileImage} alt="Subhash Vadaparthi" className="hero-image" />
+            </div>
+          </div>
+        </div>
+
+        <div className="hero-stat-strip">
+          <div className="stat" ref={projectRef}>
+            <span className="stat-num">{projectCount}+</span>
+            <span className="stat-label">projects shipped</span>
+          </div>
+          <div className="stat" ref={techRef}>
+            <span className="stat-num">{techCount}+</span>
+            <span className="stat-label">technologies</span>
+          </div>
+          <div className="stat" ref={domainRef}>
+            <span className="stat-num">{domainCount}+</span>
+            <span className="stat-label">domains covered</span>
+          </div>
+          <div className="stat stat-accent">
+            <span className="stat-num"><i className="fas fa-brain"></i></span>
+            <span className="stat-label">AI focused</span>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════ CURRENTLY ═══════════ */}
+      <section className="signal reveal" aria-labelledby="signal-label">
+        <div className="section-head">
+          <span className="section-num">00</span>
+          <h2 id="signal-label" className="section-title">Currently</h2>
+          <span className="section-rule" aria-hidden="true"></span>
+          <span className="section-meta">// live status</span>
+        </div>
+
+        <div className="signal-grid">
+          <article className="signal-card glass-panel">
+            <header>
+              <span className="pill pill-live">
+                <span className="dot dot-live" aria-hidden="true"></span>BUILDING
+              </span>
+            </header>
+            <p className="signal-headline">AI & Computer Vision Projects</p>
+            <p className="signal-sub">
+              Developing intelligent applications with deep learning, computer vision, 
+              and full-stack web technologies. Turning research into production-ready systems.
+            </p>
+          </article>
+
+          <article className="signal-card glass-panel">
+            <header>
+              <span className="pill pill-accent">
+                <span className="dot dot-accent" aria-hidden="true"></span>LEARNING
+              </span>
+            </header>
+            <p className="signal-headline">Advanced AI & Cloud Architecture</p>
+            <p className="signal-sub">
+              Deepening expertise in cloud-native architectures, MLOps pipelines, 
+              and scalable AI deployment strategies.
+            </p>
+          </article>
+
+          <article className="signal-card glass-panel">
+            <header>
+              <span className="pill pill-warm">OPEN</span>
+            </header>
+            <p className="signal-headline">Open to Opportunities</p>
+            <p className="signal-sub">
+              Looking for roles in AI/ML engineering, computer vision, or full-stack development
+              where I can build impactful intelligent systems.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      {/* ═══════════ FEATURED PROJECTS ═══════════ */}
+      <section className="dossier reveal" aria-labelledby="dossier-label">
+        <div className="section-head">
+          <span className="section-num">01</span>
+          <h2 id="dossier-label" className="section-title">Projects</h2>
+          <span className="section-rule" aria-hidden="true"></span>
+          <span className="section-meta">// featured work</span>
+        </div>
+
+        <div className="dossier-grid">
+          {featuredProjects.map((p) => (
+            <article key={p.id} className="dossier-card glass-panel">
+              <div className="dossier-card-header">
+                <span className="dossier-num">{p.num}</span>
+                <div className="dossier-metrics">
+                  {p.metrics.map((m, i) => (
+                    <div key={i} className="dossier-metric">
+                      <span className="dossier-metric-val">{m.value}</span>
+                      <span className="dossier-metric-label">{m.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="dossier-card-image">
+                <img src={p.image} alt={p.title} />
+              </div>
+
+              <h3 className="dossier-title">{p.title}</h3>
+              <p className="dossier-subtitle">{p.subtitle}</p>
+              <p className="dossier-desc">{p.description}</p>
+
+              <div className="dossier-tags">
+                {p.tags.map((t, i) => (
+                  <span key={i} className="tech-tag">{t}</span>
+                ))}
+              </div>
+
+              <div className="dossier-links">
+                <a href={p.github} target="_blank" rel="noopener noreferrer" className="dossier-link">
+                  <i className="fab fa-github"></i> GitHub
+                  <i className="fas fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="view-all">
+          <Link to="/projects" className="btn btn-ghost">
+            View All Projects <i className="fas fa-arrow-right"></i>
+          </Link>
+        </div>
+      </section>
+
+      {/* ═══════════ CORE EXPERTISE ═══════════ */}
+      <section className="capabilities reveal" aria-labelledby="cap-label">
+        <div className="section-head">
+          <span className="section-num">02</span>
+          <h2 id="cap-label" className="section-title">Skills</h2>
+          <span className="section-rule" aria-hidden="true"></span>
+          <span className="section-meta">// capabilities</span>
+        </div>
+
+        <div className="cap-grid">
+          {[
+            {
+              icon: 'fas fa-brain',
+              title: 'AI & Machine Learning',
+              skills: ['Python', 'TensorFlow', 'PyTorch', 'Scikit-learn', 'Deep Learning', 'NLP'],
+            },
+            {
+              icon: 'fas fa-eye',
+              title: 'Computer Vision',
+              skills: ['OpenCV', 'MediaPipe', 'YOLO', 'Image Processing', 'Object Detection', 'CNNs'],
+            },
+            {
+              icon: 'fas fa-code',
+              title: 'Full Stack',
+              skills: ['React.js', 'Spring Boot', 'Node.js', 'REST APIs', 'JavaScript', 'Java'],
+            },
+            {
+              icon: 'fas fa-cloud',
+              title: 'Cloud & DevOps',
+              skills: ['AWS', 'Docker', 'Git', 'MySQL', 'MongoDB', 'CI/CD'],
+            },
+          ].map((cat, i) => (
+            <div key={i} className="cap-card glass-panel">
+              <div className="cap-icon">
+                <i className={cat.icon}></i>
+              </div>
+              <h3 className="cap-title">{cat.title}</h3>
+              <div className="cap-tags">
+                {cat.skills.map((s, j) => (
+                  <span key={j} className="tech-tag">{s}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+  );
 };
 
 export default Home;

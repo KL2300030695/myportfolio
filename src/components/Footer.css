@@ -1,0 +1,70 @@
+/* ============================================================
+   FOOTER — Status Bar
+   ============================================================ */
+
+.site-footer {
+  border-top: 1px solid var(--border-subtle);
+  padding: var(--space-2xl) var(--space-xl);
+  background: var(--bg-secondary);
+}
+
+.footer-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.footer-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.footer-status-text {
+  color: #22C55E;
+}
+
+.footer-sep {
+  color: var(--text-tertiary);
+  opacity: 0.4;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.footer-links a {
+  color: var(--text-tertiary);
+  font-size: 1.1rem;
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.footer-links a:hover {
+  color: var(--text-accent);
+  transform: translateY(-2px);
+}
+
+.footer-copy {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-tertiary);
+  opacity: 0.6;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 600px) {
+  .site-footer {
+    padding: var(--space-xl) var(--space-md);
+  }
+}
