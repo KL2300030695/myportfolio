@@ -36,13 +36,13 @@ const About = () => {
         <div className="about-intro-content">
           <div className="about-text glass-panel">
             <p>
-              I'm <strong className="accent-text">Subhash Vadaparthi</strong> — a developer 
+              I'm <strong className="accent-text">Subhash Vadaparthi</strong> — a developer
               passionate about building intelligent systems that bridge AI research and real-world applications.
             </p>
             <p>
               My work spans <span className="accent-text">Computer Vision</span>,{' '}
               <span className="accent-text">Machine Learning</span>, and{' '}
-              <span className="accent-text">Full-Stack Development</span>. I believe the best software 
+              <span className="accent-text">Full-Stack Development</span>. I believe the best software
               comes from understanding both the algorithm and the user — and I enjoy working at that intersection.
             </p>
             <p>
@@ -157,7 +157,7 @@ const About = () => {
                   <h3 className="timeline-role">B.Tech in Computer Science</h3>
                   <p className="timeline-company">KL University · India</p>
                 </div>
-                <span className="pill pill-accent">2021 — 2025</span>
+                <span className="pill pill-accent">2023 — 2027</span>
               </div>
               <ul className="timeline-details">
                 <li>Specialization in AI/ML and Computer Vision</li>
